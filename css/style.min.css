@@ -3,7 +3,7 @@
  * https://gettemplates.co/roxy
  */
 html, body {
-  width: 100%;
+  max-width: 100%;
   overflow-x: hidden; }
 
 body {
@@ -101,10 +101,12 @@ section {
   border-radius: 0;
   margin-bottom: 0;
   overflow: hidden;
-  min-height: 100vh; }
+  min-height: 100vh; 
+}
   @media (max-width: 767px) and (orientation: landscape) {
     .jumbotron {
-      min-height: 500px; } }
+      min-height: 500px; } 
+  }
   .jumbotron .container {
     position: relative;
     z-index: 1; }
@@ -126,10 +128,14 @@ section {
   .jumbotron h1 {
     line-height: 1;
     font-weight: bold;
-    display: inline-block;
-    border: 15px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 13rem;
+    border: 3px solid #fff;
     padding: 30px;
-    font-size: 9rem;
+    font-size: 2rem;
     opacity: 0;
     animation: 1s fadeInFromTop cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s forwards;
     animation-delay: .8s; 
@@ -163,6 +169,20 @@ section {
 
 .text-white {
   color: #fff; }
+
+.container-wrapper {
+  display: none;
+}
+
+@media (min-width: 993px) {
+  .container-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: center;
+  }
+}
+
 
 /*==============================
 =            BUTTON            =
